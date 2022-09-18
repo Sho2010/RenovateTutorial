@@ -3,7 +3,7 @@
 # https://aquaproj.github.io/
 registries:
 - type: standard
-  ref: v3.55.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v3.56.0 # renovate: depName=aquaproj/aqua-registry
 packages:
   - name: open-policy-agent/conftest@v0.34.0
   - name:  istio/istio/istioctl@1.14.0
