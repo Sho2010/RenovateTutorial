@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application
+  labels:
+    app.kubernetes.io/name: name
+    app.kubernetes.io/version: 1.0
+    app.kubernetes.io/component: rails
+    app.kubernetes.io/part-of: serviceName
+    app.kubernetes.io/managed-by: kustomize
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "application"
+  template:
+    metadata:
+      labels:
+        app: "application"
+    spec:
+      serviceAccountName: default
+      containers:
+      - name: application
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["/usr/bin/tail", "-f", "/dev/null"]
+      resources:
+        limits:
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 256Mi
