@@ -9,6 +9,10 @@
     {
       "matchUpdateTypes": ["major"],
       "dependencyDashboardApproval": true
+    },
+    {
+      "groupName": "kustomize",
+      "paths": ["./kustomizes/**"]
     }
   ]
 }
